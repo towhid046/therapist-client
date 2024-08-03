@@ -21,7 +21,7 @@ const menuItems = [
 
 const NavbarLeft = () => {
   return (
-    <nav className="w-[250px] min-h-screen bg-white">
+    <aside className="w-[250px] min-h-screen bg-white">
       <div>
         <div className="py-14 flex justify-center">
           <Link to={"/"}>
@@ -45,7 +45,7 @@ const NavbarLeft = () => {
           ))}
         </ul>
       </div>
-    </nav>
+    </aside>
   );
 };
 
