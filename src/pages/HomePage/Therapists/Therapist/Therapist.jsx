@@ -1,7 +1,7 @@
 import location from "../../../../assets/images/icons/location.svg";
 import car from "../../../../assets/images/icons/car.svg";
 import PropTypes from "prop-types";
-const FeatureCard = ({ therapist }) => {
+const Therapist = ({ therapist }) => {
   return (
     <div className="mx-3 pt-[10px]  border rounded-[10px]">
       <figure className="px-[10px]">
@@ -33,8 +33,8 @@ const FeatureCard = ({ therapist }) => {
   );
 };
 
-FeatureCard.propTypes = {
+Therapist.propTypes = {
   therapist: PropTypes.object.isRequired,
 };
 
-export default FeatureCard;
+export default Therapist;

@@ -3,7 +3,7 @@ import NavbarTop from "./../components/Shared/NavbarTop/NavbarTop";
 import NavbarLeft from "./../components/Shared/NavbarLeft/NavbarLeft";
 const Root = () => {
   return (
-    <div className="flex gap-6 max-w-[1440px] mx-auto">
+    <div className="flex max-w-[1440px] mx-auto">
       <NavbarLeft />
       <div className="w-full">
         <NavbarTop />

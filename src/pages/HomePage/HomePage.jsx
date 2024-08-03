@@ -1,10 +1,12 @@
 import NearTherapist from "./NearTherapist/NearTherapist";
-import Features from './Features/Features';
+import Therapists from "./Therapists/Therapists";
+import TestimonialsFeatures from "./TestimonialsFeatures/TestimonialsFeatures";
 const HomePage = () => {
   return (
     <section className="bg-secondary-color p-[30px]">
       <NearTherapist />
-      <Features/>
+      <Therapists />
+      <TestimonialsFeatures />
     </section>
   );
 };

@@ -2,7 +2,7 @@ import therapiest1 from "../../../../assets/images/home/therapiest-1.png";
 import therapiest2 from "../../../../assets/images/home/therapiest-2.png";
 import therapiest3 from "../../../../assets/images/home/therapiest-3.png";
 import therapiest4 from "../../../../assets/images/home/therapiest-4.png";
-export const featuredTherapists = [
+export const therapists = [
   {
     id: 1,
     name: "Alexander Cort",
