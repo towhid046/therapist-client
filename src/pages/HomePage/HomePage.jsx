@@ -3,7 +3,9 @@ import Therapists from "./Therapists/Therapists";
 import TestimonialsFeatures from "./TestimonialsFeatures/TestimonialsFeatures";
 import NavbarLeft from "./../../components/Shared/NavbarLeft/NavbarLeft";
 import NavbarTop from "../../components/Shared/NavbarTop/NavbarTop";
+import useScrollToTop from "../../hooks/useScrollToTop";
 const HomePage = () => {
+  useScrollToTop()
   return (
     <section className="flex">
       <NavbarLeft />

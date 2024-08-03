@@ -1,15 +1,15 @@
 import loginImg from "../../../assets/images/login/login-img.png";
 
-const LoginBanner = () => {
+const LoginBanner = ({ children }) => {
   return (
     <div
       className="flex-1 min-h-[802px] rounded-[16px] bg-cover bg-center bg-no-repeat flex justify-center items-center relative"
       style={{ backgroundImage: `url('${loginImg}')` }}
     >
-      <div className="bg-[#152A16] opacity-[0.7] w-max rounded-[10px] py-[30px] px-[35px]">
+      <div className="bg-[#152A16] opacity-[0.7] max-w-[341px] text-center rounded-[10px] py-[30px] px-[35px]">
         <p className="text-white text-[22px] font-medium">
-          <span className="font-semibold text-primary-color">Sign In</span> to
-          view all the <br /> massage therapists
+          {children}
+          
         </p>
       </div>
       <ul className="flex gap-3 justify-center absolute bottom-6">
