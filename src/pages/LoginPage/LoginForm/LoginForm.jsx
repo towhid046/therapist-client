@@ -1,10 +1,29 @@
 import { BsCheck } from "react-icons/bs";
 import lineX from "../../../assets/images/icons/line-x.svg";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
+import { toast } from "react-toastify";
+import { useForm } from "react-hook-form";
 
 const LoginForm = () => {
   const [toggle, setToggle] = useState(false);
+  const { loginUser } = useAuth();
+  const navigate = useNavigate();
+  const { register, handleSubmit } = useForm();
+
+  const handleLogin = async (data) => {
+    const { email, password } = data;
+
+    try {
+      await loginUser(email, password);
+      toast.success("Login success");
+
+      navigate("/");
+    } catch (error) {
+      toast.error("Something went wrong!");
+    }
+  };
 
   return (
     <>
@@ -15,12 +34,14 @@ const LoginForm = () => {
       </div>
 
       {/* email login form */}
-      <form>
+      <form onSubmit={handleSubmit(handleLogin)}>
         <div className="flex flex-col gap-3 mb-8">
           <label className="text-[#152A16] font-medium">Email</label>
           <input
             type="email"
             placeholder="Enter your email"
+            required
+            {...register("email")}
             className="text-[15px] px-5 py-3.5 rounded-[10px] border focus:outline-none focus:border-primary-color focus:border-opacity-50"
           />
         </div>
@@ -29,7 +50,9 @@ const LoginForm = () => {
           <label className="text-[#152A16] font-medium">Password</label>
           <input
             type="password"
+            {...register("password")}
             placeholder="Enter your password"
+            required
             className="text-[15px] px-5 py-3.5 rounded-[10px] border focus:outline-none focus:border-primary-color focus:border-opacity-50"
           />
         </div>

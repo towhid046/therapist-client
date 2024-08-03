@@ -1,16 +1,42 @@
 import { useState } from "react";
 import { BsCheck } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
+import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 const RegistrationForm = () => {
   const [toggle, setToggle] = useState(false);
+  const { register, handleSubmit } = useForm();
+  const navigate = useNavigate();
+  const { createUser, updateUserProfile } = useAuth();
+
+  const handleRegistration = async (data) => {
+    const { password, email, username, confirmPassword } = data;
+
+    if (password !== confirmPassword) {
+      return toast.error("Password Not Match");
+    }
+    try {
+      await createUser(email, password);
+      updateUserProfile(username);
+      toast.success("Registration success");
+
+      navigate("/");
+    } catch (error) {
+      toast.error("Something went wrong!");
+    }
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit(handleRegistration)}>
       <div className="flex flex-col gap-1.5 mb-4 ">
         <label className="text-[#152A16] font-medium">Name</label>
         <input
           type="text"
+          {...register("username")}
           placeholder="@username"
           className="text-[15px] px-5 py-3.5 rounded-[10px] border focus:outline-none focus:border-primary-color focus:border-opacity-50"
+          required
         />
       </div>
 
@@ -18,24 +44,30 @@ const RegistrationForm = () => {
         <label className="text-[#152A16] font-medium">Email</label>
         <input
           type="email"
+          {...register("email")}
           placeholder="Enter your email"
           className="text-[15px] px-5 py-3.5 rounded-[10px] border focus:outline-none focus:border-primary-color focus:border-opacity-50"
+          required
         />
       </div>
       <div className="flex flex-col gap-1.5 mb-4">
         <label className="text-[#152A16] font-medium">Password</label>
         <input
           type="password"
+          {...register("password")}
           placeholder="Enter your password"
           className="text-[15px] px-5 py-3.5 rounded-[10px] border focus:outline-none focus:border-primary-color focus:border-opacity-50"
+          required
         />
       </div>
       <div className="flex flex-col gap-1.5 mb-2">
         <label className="text-[#152A16] font-medium">Confirm Password</label>
         <input
           type="password"
+          {...register("confirmPassword")}
           placeholder="Re-type password"
           className="text-[15px] px-5 py-3.5 rounded-[10px] border focus:outline-none focus:border-primary-color focus:border-opacity-50"
+          required
         />
       </div>
       <div>
