@@ -6,7 +6,7 @@ import logout from '../../../assets/images/icons/logout.svg'
 
 const NavbarTop = () => {
   return (
-    <nav className="flex justify-between border-l py-6 px-[30px] text-[#152A16]">
+    <nav className="flex justify-between border-l border-secondary-color py-6 px-[30px] text-[#152A16]">
       <div className="flex gap-3 items-center">
         <figure>
           <FaRegUserCircle className="text-3xl text-gray-500" />
