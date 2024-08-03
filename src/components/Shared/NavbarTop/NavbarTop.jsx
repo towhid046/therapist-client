@@ -1,10 +1,12 @@
 import { IoIosArrowDown } from "react-icons/io";
 import { FaRegUserCircle } from "react-icons/fa";
-import notification from '../../../assets/images/icons/notification.svg'
-import line from '../../../assets/images/icons/line.svg'
-import logout from '../../../assets/images/icons/logout.svg'
+import notification from "../../../assets/images/icons/notification.svg";
+import line from "../../../assets/images/icons/line.svg";
+import logout from "../../../assets/images/icons/logout.svg";
+import { Link } from "react-router-dom";
 
 const NavbarTop = () => {
+  const user = false;
   return (
     <nav className="flex justify-between border-l border-secondary-color py-6 px-[30px] text-[#152A16]">
       <div className="flex gap-3 items-center">
@@ -18,20 +20,39 @@ const NavbarTop = () => {
               <IoIosArrowDown />
             </button>
           </div>
-          <p className="text-[#5C635A] font-normal text-[14px]">guestuser@gmail.com</p>
+          <p className="text-[#5C635A] font-normal text-[14px]">
+            guestuser@gmail.com
+          </p>
         </div>
       </div>
 
       <div>
         <div className="flex gap-5">
-          <img  className="w-10 cursor-pointer" src={notification} alt="Notification" />
+          <img
+            className="w-10 cursor-pointer"
+            src={notification}
+            alt="Notification"
+          />
           <img src={line} alt="Line" />
-          <button className="flex items-center gap-2.5">
-            <span className="text-[#F15E4A] font-medium text-[15px]">Log Out</span>
-            <span className="flex justify-center items-center rounded-full w-10 h-10 bg-[#FFECEA]">
-              <img className="w-5" src={logout} alt="" />
-            </span>
-          </button>
+          {user ? (
+            <button className="flex items-center gap-2.5">
+              <span className="text-[#F15E4A] font-medium text-[15px]">
+                Log Out
+              </span>
+              <span className="flex justify-center items-center rounded-full w-10 h-10 bg-[#FFECEA]">
+                <img className="w-5" src={logout} alt="" />
+              </span>
+            </button>
+          ) : (
+            <button>
+              <Link
+                to={"login"}
+                className="text-primary-color font-medium text-[15px]"
+              >
+                Login
+              </Link>
+            </button>
+          )}
         </div>
       </div>
     </nav>

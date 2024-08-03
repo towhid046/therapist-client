@@ -8,6 +8,7 @@ import FaInfo from "../../../assets/images/icons/about.svg";
 import FaHeart from "../../../assets/images/icons/favorite.svg";
 import FaQuestionCircle from "../../../assets/images/icons/help-center.svg";
 import FaCog from "../../../assets/images/icons/setting.svg";
+import Logo from "./../Logo/Logo";
 
 const menuItems = [
   { id: 1, title: "Home", url: "/", icon: FaHome },
@@ -21,12 +22,10 @@ const menuItems = [
 
 const NavbarLeft = () => {
   return (
-    <aside className="w-[250px] border min-h-screen bg-white">
+    <aside className="w-[250px] bg-white">
       <div>
         <div className="py-14 flex justify-center">
-          <Link to={"/"}>
-            <img src={logo} alt="Logo" />
-          </Link>
+          <Logo />
         </div>
         <ul className="nav-left-menu">
           {menuItems.map((item) => (
