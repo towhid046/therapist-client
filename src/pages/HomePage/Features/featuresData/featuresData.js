@@ -1,0 +1,86 @@
+import therapiest1 from "../../../../assets/images/home/therapiest-1.png";
+import therapiest2 from "../../../../assets/images/home/therapiest-2.png";
+import therapiest3 from "../../../../assets/images/home/therapiest-3.png";
+import therapiest4 from "../../../../assets/images/home/therapiest-4.png";
+export const featuredTherapists = [
+  {
+    id: 1,
+    name: "Alexander Cort",
+    address: "123 Elm Street, NY",
+    services: ["Mobile & In-Studio"],
+    imageUrl: therapiest1,
+    detailsLink: "URL_TO_ALEXANDER_CORT_DETAILS",
+  },
+  {
+    id: 2,
+    name: "Michael Smith",
+    address: "789 Maple Drive, NY",
+    services: ["Mobile & In-Studio"],
+    imageUrl: therapiest2,
+    detailsLink: "URL_TO_MICHAEL_SMITH_DETAILS",
+  },
+  {
+    id: 3,
+    name: "David Martinez",
+    address: "Peris, San Fran",
+    services: ["Mobile & In-Studio"],
+    imageUrl: therapiest3,
+    detailsLink: "URL_TO_DAVID_MARTINEZ_DETAILS",
+  },
+  {
+    id: 4,
+    name: "Jennifer Lee",
+    address: "567 Cedar Lane",
+    services: ["Mobile & In-Studio"],
+    imageUrl: therapiest4,
+    detailsLink: "URL_TO_JENNIFER_LEE_DETAILS",
+  },
+  {
+    id: 5,
+    name: "Emily Clark",
+    address: "456 Oak Avenue",
+    services: ["Mobile & In-Studio"],
+    imageUrl: therapiest1,
+    detailsLink: "URL_TO_EMILY_CLARK_DETAILS",
+  },
+  {
+    id: 6,
+    name: "Chris Johnson",
+    address: "987 Pine Road",
+    services: ["Mobile & In-Studio"],
+    imageUrl: therapiest2,
+    detailsLink: "URL_TO_CHRIS_JOHNSON_DETAILS",
+  },
+  {
+    id: 7,
+    name: "Patricia Brown",
+    address: "321 Maple Lane",
+    services: ["Mobile & In-Studio"],
+    imageUrl: therapiest3,
+    detailsLink: "URL_TO_PATRICIA_BROWN_DETAILS",
+  },
+  {
+    id: 8,
+    name: "James Wilson",
+    address: "654 Elm Drive",
+    services: ["Mobile & In-Studio"],
+    imageUrl: therapiest4,
+    detailsLink: "URL_TO_JAMES_WILSON_DETAILS",
+  },
+  {
+    id: 9,
+    name: "Sophia Martinez",
+    address: "789 Birch Street",
+    services: ["Mobile & In-Studio"],
+    imageUrl: therapiest1,
+    detailsLink: "URL_TO_SOPHIA_MARTINEZ_DETAILS",
+  },
+  {
+    id: 10,
+    name: "Robert Davis",
+    address: "234 Cedar Avenue",
+    services: ["Mobile & In-Studio"],
+    imageUrl: therapiest2,
+    detailsLink: "URL_TO_ROBERT_DAVIS_DETAILS",
+  },
+];

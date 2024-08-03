@@ -2,7 +2,7 @@ import therapy from "../../../assets/images/home/therapy.png";
 import therapyVector from "../../../assets/images/home/therapy-vector.png";
 const NearTherapist = () => {
   return (
-    <div className="bg-white p-[30px] flex justify-between items-center rounded-[10px]">
+    <div className="bg-white p-[30px] mb-6 flex justify-between items-center rounded-[10px]">
       <div className="flex-1">
         <h2 className="text-xl font-medium mb-5">
           I'm Login for Massage Therapist Near...
