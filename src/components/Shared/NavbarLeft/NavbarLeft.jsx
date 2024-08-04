@@ -9,11 +9,12 @@ import FaHeart from "../../../assets/images/icons/favorite.svg";
 import FaQuestionCircle from "../../../assets/images/icons/help-center.svg";
 import FaCog from "../../../assets/images/icons/setting.svg";
 import Logo from "./../Logo/Logo";
+import useAuth from "../../../hooks/useAuth";
 
 const menuItems = [
   { id: 1, title: "Home", url: "/", icon: FaHome },
   { id: 2, title: "New Listing", url: "/new-listing", icon: FaPlus },
-  { id: 3, title: "Search", url: "/search", icon: FaSearch },
+  { id: 3, title: "Services", url: "/services", icon: FaSearch },
   { id: 4, title: "About", url: "/about", icon: FaInfo },
   { id: 5, title: "Favorites", url: "/favorites", icon: FaHeart },
   { id: 6, title: "Help Center", url: "/help-center", icon: FaQuestionCircle },
@@ -21,6 +22,7 @@ const menuItems = [
 ];
 
 const NavbarLeft = () => {
+  const {user} = useAuth()
   return (
     <aside className="w-[250px] bg-white">
       <div>
@@ -31,7 +33,7 @@ const NavbarLeft = () => {
           {menuItems.map((item) => (
             <li
               key={item.id}
-              className={`${item.title === "Favorites" && "border-b"}`}
+              className={`${item.title === "Favorites" && "border-b"} ${!user && item.title === 'Services' ? 'hidden' : ''}`}
             >
               <NavLink
                 to={item.url}
