@@ -5,6 +5,7 @@ import LoginPage from "./../pages/LoginPage/LoginPage";
 import RegistrationPage from "./../pages/RegistrationPage/RegistrationPage";
 import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
 import Services from "../pages/Services/Services";
+import ProtectedRoute from "./ProtectedRoute";
 
 const routes = createBrowserRouter([
   {
@@ -26,7 +27,11 @@ const routes = createBrowserRouter([
       },
       {
         path: "/services",
-        element: <Services />,
+        element: (
+          <ProtectedRoute>
+            <Services />
+          </ProtectedRoute>
+        ),
       },
     ],
   },
